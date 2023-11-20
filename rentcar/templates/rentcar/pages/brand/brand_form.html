@@ -1,0 +1,32 @@
+{% load bootstrap %}
+<div class="modal-content">
+    <div class="modal-header">
+        {% if object %}
+            <h5 class="modal-title">Actualizar marca</h5>
+        {% else %}
+            <h5 class="modal-title">Adicionar marca</h5>
+        {% endif %}
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+
+    {% if object %}
+        <form method="post" action="{% url 'brand_update' object.id %}" id="brand-form">
+    {% else %}
+        <form method="post" action="{% url 'brand_create' %}" id="brand-form">
+    {% endif %}
+
+
+    <div class="modal-body">
+        {% csrf_token %}
+        {{ form|bootstrap }}
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        {% if not object %}
+            <input type="submit" class="btn btn-primary" value="create">
+        {% else %}
+            <input type="submit" class="btn btn-primary" value="update">
+        {% endif %}
+    </div>
+    </form>
+</div>

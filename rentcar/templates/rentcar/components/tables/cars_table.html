@@ -1,0 +1,32 @@
+<div class="d-flex justify-content-between">
+    <h1 class="text-white">Cars</h1>
+    <a href="{% url 'car_create' %}" class="btn btn-primary m-2">Add car</a>
+</div>
+
+<table class="table table-dark">
+    <thead>
+    <th>ID</th>
+    <th>Plate</th>
+    <th>Model</th>
+    <th>Situation</th>
+    <th>Color</th>
+    <th>Km</th>
+    <th>Price</th>
+    </thead>
+    <tbody>
+    {% for object in object_list %}
+        <tr class="table-active">
+            <td>{{ object.id }}</td>
+            <td>{{ object.plate }}</td>
+            <td>{{ object.model }}</td>
+            <td>{{ object.situation }}</td>
+            <td>{{ object.color }}</td>
+            <td>{{ object.km }}</td>
+            <td>$ {{ object.price }}</td>
+            <td><a href="{% url 'car_detail' object.id %}">Ver detalles</a></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+

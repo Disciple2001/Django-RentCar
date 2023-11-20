@@ -1,0 +1,20 @@
+{% extends 'rentcar/layout.html' %}
+{% load bootstrap %}
+
+{% block title %}Home / Brands / {{ object.id }}{% endblock %}
+
+{% block content %}
+
+     <div>
+        <h1>{{ object.name }}</h1>
+    </div>
+
+        <a href="{% url 'brand_update' object.id %}" class="btn btn-success">Editar</a>
+        {#    <a href="{% url 'task_delete' object.id %}" class="btn btn-success">Eliminar</a>#}
+    <form method="post" action="{% url 'brand_delete' object.id %}">
+        {% csrf_token %}
+        <input type="submit" value="eliminar">
+    </form>
+
+{% endblock %}
+

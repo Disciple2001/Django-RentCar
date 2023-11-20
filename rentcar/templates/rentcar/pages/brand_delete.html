@@ -1,0 +1,18 @@
+{% extends 'rentcar/layout.html' %}
+{% load bootstrap %}
+{% block title %}TaskList{% endblock %}
+
+{% block content %}
+
+    <form method="post">
+        {% csrf_token %}
+
+
+        {{ form|bootstrap }}
+
+        <input type="submit" class="btn btn-primary" value="confirm delete">
+
+
+    </form>
+{% endblock %}
+

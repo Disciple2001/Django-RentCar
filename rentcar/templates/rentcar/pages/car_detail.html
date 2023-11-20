@@ -1,0 +1,16 @@
+{% extends 'rentcar/layout.html' %}
+
+{% block title %}Home / Cars / {{ object.id }} / Details{% endblock %}
+
+{% block content %}
+    <ul type="square">
+        <li>{{ object.id }}</li>
+        <li>{{ object.model }}</li>
+        <li>{{ object.plate }}</li>
+        <li>{{ object.situation }}</li>
+        <li>{{ object.color }}</li>
+        <li>{{ object.km }}</li>
+        <li>{{ object.price }}</li>
+    </ul>
+
+{% endblock %}

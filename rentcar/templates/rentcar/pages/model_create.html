@@ -1,0 +1,40 @@
+{% extends 'rentcar/layout.html' %}
+{% load static %}
+{% load bootstrap %}
+
+{% block title %}Home / Model / Add Model{% endblock %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="{% static 'css/model_create.css' %}">
+{% endblock %}
+
+{% block content %}
+
+
+    <form method="POST" enctype="multipart/form-data">
+
+	<!-- Security token -->
+	{% csrf_token %}
+
+	<!-- Using the formset -->
+	{{ form|bootstrap_horizontal }}
+
+{#{% for field in form %}#}
+{#    {{ field|bootstrap }}#}
+{#{% endfor %}#}
+
+
+	<input type="submit" value="Submit">
+</form>
+
+
+{#    <form method="post">#}
+{#        {% csrf_token %}#}
+{##}
+{##}
+{#        {{ form|bootstrap }}#}
+{##}
+{#        <input type="submit" class="btn btn-primary" value="add">#}
+{##}
+{#    </form>#}
+{% endblock %}
+

@@ -1,0 +1,11 @@
+#div1{
+    background-color: rgb(3, 3, 59);
+}
+
+#div1, #div2{
+    height: 100vh
+}
+
+#div2{
+    background: linear-gradient( 90grad, rgb(74, 74, 221), rgb(8, 2, 59))
+}

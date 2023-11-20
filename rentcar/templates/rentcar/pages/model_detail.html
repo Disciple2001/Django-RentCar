@@ -1,0 +1,11 @@
+{% extends 'rentcar/layout.html' %}
+
+{% block title %} Home / Model / {{ object.id }}/ Detail {% endblock %}
+
+{% block content %}
+    <h1>{{ object.name }}</h1>
+    <h1>{{ object.brand }}</h1>
+
+    <a class="btn btn-primary" href="{% url 'model_update' object.id %}">Update</a>
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% include 'rentcar/layout.html' %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+
+    <form method="post">
+        {% csrf_token %}
+
+
+        {{ form }}
+
+        <input type="submit" class="btn btn-primary" value="confirm delete">
+
+
+    </form>
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'rentcar/layout.html' %}
+
+{% load bootstrap %}
+
+{% block title %}Home / Cars / Add Car{% endblock %}
+
+{% block content %}
+
+    <form method="post">
+        {% csrf_token %}
+
+
+        {{ form|bootstrap }}
+
+        <input type="submit" class="btn btn-primary" value="add">
+
+    </form>
+
+{% endblock %}
+

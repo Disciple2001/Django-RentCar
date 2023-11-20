@@ -1,0 +1,16 @@
+{% extends 'rentcar/layout.html' %}
+{% load bootstrap %}
+
+{% block title %}Home / Brands / Add Brand{% endblock %}
+
+{% block content %}
+
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="name">
+
+        <input type="submit" class="btn btn-primary" value="add">
+
+    </form>
+{% endblock %}
+

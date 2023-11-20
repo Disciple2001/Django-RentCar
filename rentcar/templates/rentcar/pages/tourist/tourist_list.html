@@ -1,0 +1,14 @@
+
+{% for object in object_list %}
+    <tr class="table-active">
+        <td>{{object.id}}</td>
+        <td>{{object.name}}</td>
+        <td>
+             <button class="btn btn-primary btn-detail" data-detail-url="{% url 'tourist_detail' object.id %}">Ver detalles</button>
+        <td>
+            <button class="btn btn-danger btn-delete" data-delete-url="{% url 'tourist_delete' object.id %}">Eliminar</button>
+        </td>
+    </tr>
+{% endfor %}
+
+
